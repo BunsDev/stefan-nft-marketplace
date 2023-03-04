@@ -4,15 +4,20 @@
 
 There were some fixes to the nftMarketplace as well as NFT contract not keeping correct state about NFTs if maliciously used.
 
+## Approach
+
+Running currently on Fantoms testnet
+A NFT Marketplace running currently on Fantoms testnet. Let's you mint, sell and buy NFT's. During the minting we store the Metadata on IPFS and only store the TokenURI on-chain.
+
 ## Status
 
-The NFT Marketplace is currently running and fully functional on Goerli at
+The NFT Marketplace is currently running and fully functional on Fantoms testnet at
 
 1. NFT Market:
 
 2. NFT:
 
-The Website is online and running at [Website](https://fluffy-moonbeam-06ab85.netlify.app/)
+The Website is online and running at [Website]()
 
 ## Local environment set up
 
@@ -32,13 +37,6 @@ The Website is online and running at [Website](https://fluffy-moonbeam-06ab85.n
 
 8. await Contract.setNftAddress("[input address from NFTV2 contract (step 5)]")
 
-## Video Demo
-
-## Approach
-
-Running currently on Goerli
-A NFT Marketplace running currently on Goerli. Let's you mint, sell and buy NFT's. During the minting we store the Metadata on IPFS and only store the TokenURI on-chain.
-
 ## Stack
 
 ### Blockchain Technologies
@@ -46,12 +44,13 @@ A NFT Marketplace running currently on Goerli. Let's you mint, sell and buy NFT'
 1. Environment - [Hardhat](https://hardhat.org/)
 2. File Storage - [IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client#install)
 3. Client - [ethers.js](https://docs.ethers.io/v5/)
+4. Blockchain - [Fantom]()
 
 ## Biconomy
 
 ### Demo videos:
 
-NFT Marketplace: hhttps://www.youtube.com/watch?v=zYdKS_B3RJo
+NFT Marketplace:
 
 SKD Hyphen: https://www.youtube.com/watch?v=cViRhJu1qIM
 
@@ -88,5 +87,6 @@ And all contracts modified accordingly: [Code]()
 
 ## Challenges
 
+- First time working with Fantom
 - Handling Allowance
 - IPFS upload
