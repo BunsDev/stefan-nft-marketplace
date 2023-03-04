@@ -42,6 +42,17 @@ module.exports = {
       url: APP_GOERLI_ENDPOINT,
       accounts: [APP_PRIVATE_KEY],
     },
+    // Fantom mainnet and testnet
+    fantomMainnet: {
+      url: `https://rpcapi.fantom.network`,
+      chainId: 250,
+      accounts: [APP_PRIVATE_KEY],
+    },
+    fantomTestnet: {
+      url: `https://rpc.testnet.fantom.network`,
+      chainId: 4002,
+      accounts: [APP_PRIVATE_KEY],
+    },
   },
   gasReporter: {
     enabled: REPORT_GAS || false,
