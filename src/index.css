@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  background-color: "#0x1a1b1a";
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+#pages {
+  margin: 0;
+
+  background: rgb(37, 1, 84);
+  background: linear-gradient(
+    90deg,
+    rgba(37, 1, 84, 1) 0%,
+    rgba(221, 177, 240, 1) 100%
+  );
+  animation: gradientBG 12s ease infinite;
+  background-size: 400% 400%;
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
