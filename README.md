@@ -25,17 +25,19 @@ The Website is online and running at [Website]()
 
 2. npm i
 
-3. npm start
+3. set up .env
 
-4. npx hardhat console --network goerli
+4. npm start
 
-5. npx hardhat run scripts/deploy.js --network goerli
+5. npx hardhat run scripts/deploy.js --network fantomTestnet
 
-6. const contract = await ethers.getContractFactory("NftMarketPlaceV2")
+6. npx hardhat console --network fantomTestnet
 
-7. const Contract = await contract.attach("[input address from deploying NftMarketPlaceV2 contract (step 5)]")
+7. const contract = await ethers.getContractFactory("NftMarketPlaceV2")
 
-8. await Contract.setNftAddress("[input address from NFTV2 contract (step 5)]")
+8. const Contract = await contract.attach("[input address from deploying NftMarketPlaceV2 contract (step 6)]")
+
+9. await Contract.setNftAddress("[input address from NFTV2 contract (step 6)]")
 
 ## Stack
 
@@ -44,7 +46,7 @@ The Website is online and running at [Website]()
 1. Environment - [Hardhat](https://hardhat.org/)
 2. File Storage - [IPFS](https://github.com/ipfs/js-ipfs/tree/master/packages/ipfs-http-client#install)
 3. Client - [ethers.js](https://docs.ethers.io/v5/)
-4. Blockchain - [Fantom]()
+4. Blockchain - [Fantom](https://docs.fantom.foundation/quick-start/short-guide)
 
 ## Biconomy
 
@@ -62,16 +64,6 @@ Tokens from one network to another
 Biconomy docs: https://docs.biconomy.io/products/hyphen-instant-cross-chain-transfers/hyphen-widget
 
 Added at: [Code]()
-
-### Gasless Transactions
-
-This NFT allows party gasless NFT minting,selling and buying (mintNFT(), sellNFT(), buyNFT()) thanks to biconomy (only the marketplace itself and not NFT contract is currently gasless, because of the nature of my contract setup only the second transaction you need to accept for minting, etc... will be gasless (you still have to pay 0.002 eth fee to the contract to the owner when minting))
-
-Biconomy docs: https://docs.biconomy.io/products/enable-gasless-transactions/choose-an-approach-to-enable-gasless/eip-2771
-
-Added at: [Code]()
-
-And all contracts modified accordingly: [Code]()
 
 ### Frontend
 
