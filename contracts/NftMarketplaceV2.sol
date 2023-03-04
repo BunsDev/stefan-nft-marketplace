@@ -147,11 +147,11 @@ contract NftMarketPlaceV2 is ReentrancyGuard, ERC2771Recipient{
 
     // FUNCTIONS 
     /// @notice setting owner to contract deployer
-    constructor(address _DutchAuctionFactory, address _EngFactoryContract, address forwarder) {
+    constructor(address _DutchAuctionFactory, address _EngFactoryContract) {
         i_owner = payable(_msgSender());
         i_dutchFactoryContract = _DutchAuctionFactory;
         i_engFactoryContract = _EngFactoryContract;
-        _setTrustedForwarder(forwarder);
+       
     }
 
     /// @notice used for tips and listingprice from NFT contract to project creator/deployer

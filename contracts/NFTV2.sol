@@ -105,9 +105,8 @@ contract NFTV2 is ERC721URIStorage, ERC2771Recipient {
     ///////////////////////////////////////////////
 
     /// @notice setting name, symbol to fixed values
-    constructor(address _marketplace, address forwarder) ERC721("Ape Family", "APF") {
+    constructor(address _marketplace) ERC721("Ape Family", "APF") {
         i_marketplace = _marketplace;
-        _setTrustedForwarder(forwarder);
     }
 
     /// @notice mint function(createNFT)
