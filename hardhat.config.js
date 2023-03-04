@@ -49,7 +49,7 @@ module.exports = {
       accounts: [APP_PRIVATE_KEY],
     },
     fantomTestnet: {
-      url: `https://rpc.testnet.fantom.network`,
+      url: `https://rpc.ankr.com/fantom_testnet`,
       chainId: 4002,
       accounts: [APP_PRIVATE_KEY],
     },
