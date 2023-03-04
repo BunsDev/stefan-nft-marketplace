@@ -97,7 +97,7 @@ function App() {
         appName: "Marketplace", // Required - random APP name
         infuraId: process.env.REACT_APP_PORJECT_ID, // Required
         rpc: "", // Optional if `infuraId` is provided; otherwise it's required
-        chainId: 5, // Optional. It defaults to 1 if not provided
+        chainId: 4002, // Optional. It defaults to 1 if not provided
         darkMode: false, // Optional. Use dark theme, defaults to false
       },
     },
@@ -132,36 +132,41 @@ function App() {
     projectSecret: process.env.REACT_APP_PROJECT_SECRET,
   });
 
+  // To connect to a custom URL:
+  let customHttpsProvider = new ethers.providers.JsonRpcProvider(
+    "https://rpc.ankr.com/fantom_testnet"
+  );
+
   /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
   // market
   const eventContractMarket = new ethers.Contract(
-    ContractAddress[5].NftMarketPlaceV2,
+    ContractAddress[4002].NftMarketPlaceV2,
     NftMarketPlace.abi,
     //infuraProvider //
     provider
   );
   //nft
   const eventContractNFT = new ethers.Contract(
-    ContractAddress[5].NFTV2,
+    ContractAddress[4002].NFTV2,
     NFT.abi,
     //infuraProvider //
     provider
   );
   const eventContractMarketInfura = new ethers.Contract(
-    ContractAddress[5].NftMarketPlaceV2,
+    ContractAddress[4002].NftMarketPlaceV2,
     NftMarketPlace.abi,
-    infuraProvider
+    customHttpsProvider
   );
   const eventContractNFTInfura = new ethers.Contract(
-    ContractAddress[5].NFTV2,
+    ContractAddress[4002].NFTV2,
     NFT.abi,
-    infuraProvider
+    customHttpsProvider
   );
   //signer calls
   //market
   const signerContractMarket = new ethers.Contract(
-    ContractAddress[5].NftMarketPlaceV2,
+    ContractAddress[4002].NftMarketPlaceV2,
     NftMarketPlace.abi,
     signer
   );
@@ -370,13 +375,18 @@ function App() {
           name: "kovan",
         });
         break;
-
+      case "4002":
+        setNetwork({
+          chainId: 4002,
+          name: "fantomTestnet",
+        });
+        break;
       default:
         setNetwork({
           chainId: "",
           name: "",
         });
-        window.alert("change Network to Goerli!");
+        window.alert("change Network to fantoms Testnet!");
         console.log(`Wrong network ${networkId}`);
     }
   }
@@ -534,7 +544,7 @@ function App() {
   }
 
   async function loadOwnNFTs() {
-    if (isProviderSet /* instance */ && network.chainId === 5) {
+    if (isProviderSet /* instance */ && network.chainId === 4002) {
       let data = await signerContractMarket.fetchAllMyTokens();
       console.log(data);
       let tokenData = await axiosGetTokenData(data);
@@ -584,10 +594,10 @@ function App() {
   const [mintedNFTs, setMintedNFTs] = useState([]);
 
   async function loadMintedNFTs() {
-    if (isProviderSet /* instance */ && network.chainId === 5) {
+    if (isProviderSet /* instance */ && network.chainId === 4002) {
       console.log("load Minted NFTS");
       const signerContractNFT = new ethers.Contract(
-        ContractAddress[5].NFTV2,
+        ContractAddress[4002].NFTV2,
         NFT.abi,
         signer
       );
@@ -643,19 +653,19 @@ function App() {
   async function sellNFT(marketItem) {
     const signer = provider.getSigner();
     let contract = new ethers.Contract(
-      ContractAddress[5].NftMarketPlaceV2,
+      ContractAddress[4002].NftMarketPlaceV2,
       NftMarketPlace.abi,
       signer
     );
     const nftContract = new ethers.Contract(
-      ContractAddress[5].NFTV2,
+      ContractAddress[4002].NFTV2,
       NFT.abi,
       signer
     );
     let id = marketItem.tokenId;
     id = id.toNumber();
     await nftContract.setApprovalForAll(
-      ContractAddress[5].NftMarketPlaceV2,
+      ContractAddress[4002].NftMarketPlaceV2,
       true
     );
     /* let tx = */ await contract.sellMarketToken(
@@ -765,7 +775,7 @@ function App() {
         listingPrice = listingPrice.toString();
 
         let contract = new ethers.Contract(
-          ContractAddress[5].NFTV2,
+          ContractAddress[4002].NFTV2,
           NFT.abi,
           signer
         );
@@ -774,7 +784,7 @@ function App() {
           value: listingPrice,
         });
       } else {
-        window.alert("Change to the Goerli network");
+        window.alert("Change to the fantoms Testnet network");
       }
     } else {
       window.alert("You need to connect your wallet first");
@@ -788,16 +798,16 @@ function App() {
     setFormInput({ ...formInput, name: e.target.value });
   }
 
-  function changeNetworkToGoerli() {
+  function changeNetworkToFantomsTestnet() {
     if (provider) {
-      if (network.chainId === 5) {
-        window.alert("already connected to Goerli!");
+      if (network.chainId === 4002) {
+        window.alert("already connected to fantoms Testnet!");
       } else {
         instance.request({
           /* method: "wallet_addEthereumChain", */
           method: "wallet_switchEthereumChain",
           params: [
-            { chainId: "0x5" },
+            { chainId: "0xFA2" },
             /*  {
               chainId: "0x5",
               rpcUrls: [
@@ -830,7 +840,7 @@ function App() {
 
   /// check if user is connected to the correct network(where NFT-marketplace/Nft contracts/... are deployed)
   function checkIfUserConnectedToCorrectNetwork() {
-    if (network.chainId === 5) {
+    if (network.chainId === 4002) {
       return true;
     }
   }
@@ -864,7 +874,7 @@ function App() {
                 onSaleNFTs={onSaleNFTs}
                 buyNFT={buyNFT}
                 connectWallet={connectWallet}
-                changeNetworkToGoerli={changeNetworkToGoerli}
+                changeNetworkToFantomsTestnet={changeNetworkToFantomsTestnet}
               />
             }
           />
@@ -880,7 +890,7 @@ function App() {
                 changeFormInputName={changeFormInputName}
                 fileURL={fileURL}
                 createMarket={createMarket}
-                changeNetworkToGoerli={changeNetworkToGoerli}
+                changeNetworkToFantomsTestnet={changeNetworkToFantomsTestnet}
                 networkChain={network}
                 connectWallet={connectWallet}
                 instance={instance}
@@ -897,7 +907,7 @@ function App() {
                 handleChangePrice={handleChangePrice}
                 loadOwnNFTs={loadOwnNFTs}
                 network={network}
-                changeNetworkToGoerli={changeNetworkToGoerli}
+                changeNetworkToFantomsTestnet={changeNetworkToFantomsTestnet}
                 instance={instance}
                 connectWallet={connectWallet}
               />
@@ -910,7 +920,7 @@ function App() {
             element={
               <MintedTokens
                 mintedNFTs={mintedNFTs}
-                changeNetworkToGoerli={changeNetworkToGoerli}
+                changeNetworkToFantomsTestnet={changeNetworkToFantomsTestnet}
                 network={network}
                 instance={instance}
                 connectWallet={connectWallet}
@@ -929,7 +939,7 @@ function App() {
             path="/NftHistory"
             element={
               <NftHistory
-                infuraProvider={infuraProvider}
+                customHttpsProvider={infuraProvider}
                 account={account}
                 checkIfUserConnectedToCorrectNetwork={
                   checkIfUserConnectedToCorrectNetwork

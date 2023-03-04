@@ -23,7 +23,7 @@ const Home = (props) => {
               <i className="fas fa-cat"></i>
             </form>
             <Typography
-              Component={"h2"}
+              component={"h2"}
               variant={"h1"}
               align="center"
               color={"secondary"}
