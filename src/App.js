@@ -651,28 +651,33 @@ function App() {
   // only [0.]..works as intended
 
   async function sellNFT(marketItem) {
-    const signer = provider.getSigner();
-    let contract = new ethers.Contract(
-      ContractAddress[4002].NftMarketPlaceV2,
-      NftMarketPlace.abi,
-      signer
-    );
-    const nftContract = new ethers.Contract(
-      ContractAddress[4002].NFTV2,
-      NFT.abi,
-      signer
-    );
-    let id = marketItem.tokenId;
-    id = id.toNumber();
-    await nftContract.setApprovalForAll(
-      ContractAddress[4002].NftMarketPlaceV2,
-      true
-    );
-    /* let tx = */ await contract.sellMarketToken(
-      id,
-      previewPriceTwo /* ,
+    console.log("check if previewPrice set");
+    console.log(previewPriceTwo);
+    if (previewPriceTwo) {
+      console.log("initiate selling nft");
+      const signer = provider.getSigner();
+      let contract = new ethers.Contract(
+        ContractAddress[4002].NftMarketPlaceV2,
+        NftMarketPlace.abi,
+        signer
+      );
+      const nftContract = new ethers.Contract(
+        ContractAddress[4002].NFTV2,
+        NFT.abi,
+        signer
+      );
+      let id = marketItem.tokenId;
+      id = id.toNumber();
+      await nftContract.setApprovalForAll(
+        ContractAddress[4002].NftMarketPlaceV2,
+        true
+      );
+      /* let tx = */ await contract.sellMarketToken(
+        id,
+        previewPriceTwo /* ,
       ContractAddress[5].NFT */
-    );
+      );
+    }
   }
 
   /* const [newNftAddress, setNewNftAddress] = useState();
@@ -692,6 +697,17 @@ function App() {
   //BUG when using input field and using a nft button on a completely different nft its still submitting the input price
   //changing price from ether(user Input) into wei for contract
   const handleChangePrice = (e) => {
+    // if value is not blank, then test the regex
+    if (previewPrice === "") {
+      console.log("invalid price input");
+      return;
+    }
+
+    if (!Number(previewPrice)) {
+      window.alert('Only use numbers and/or a dot -> "."');
+      return;
+    }
+    console.log("setting price");
     previewPrice = e.target.value;
     // you need to use dots instead of commas when using ether instead of wei
     previewPrice = previewPrice.toString();
