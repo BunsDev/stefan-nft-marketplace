@@ -28,7 +28,7 @@ const Home = (props) => {
               align="center"
               color={"secondary"}
             >
-              NFT's for sale
+              NFTs for sale
             </Typography>
 
             {props.onSaleNFTs.length === 0 && (
@@ -39,9 +39,20 @@ const Home = (props) => {
             <br></br>
             <div
               className="col-md-10 offset-md-1 "
-              style={{ marginTop: "6vh" }}
+              style={{ marginTop: "2vh" }}
             >
               <Container>
+                {" "}
+                <Box sx={{ textAlign: "center", marginTop: "2vh" }}>
+                  <Button
+                    onClick={(e) => props.loadOnSaleNFTs()}
+                    sx={{ color: "black", marginBottom: "10px" }}
+                    variant="contained"
+                  >
+                    {" "}
+                    Refresh
+                  </Button>
+                </Box>
                 <Box>
                   <Grid container spacing={4}>
                     {props.onSaleNFTs.map((index) => {
@@ -50,8 +61,9 @@ const Home = (props) => {
                           <Paper elevation={24}>
                             <Box padding={1.5}>
                               <img
+                                className="img1"
                                 width={"258vw"}
-                                height={"258vh"}
+                                height={"258vw"}
                                 alt="NFT"
                                 src={index.image}
                               ></img>
@@ -68,7 +80,7 @@ const Home = (props) => {
                               </Typography>
 
                               <Typography component={"p"} variant={"h3"}>
-                                {index.price} Ether
+                                {index.price} (in fantom)
                               </Typography>
                               <Typography style={{ color: "white" }}>
                                 Current Seller: &nbsp;
@@ -85,39 +97,6 @@ const Home = (props) => {
                             </Box>
                           </Paper>
                         </Grid>
-
-                        /* <div
-                key={index.tokenId}
-                className="card col-md-2 tokenCard"
-                style={{
-                  marginLeft: "5px",
-                  height: "46vh",
-                  backgroundColor: "#212121",
-                }}
-              >
-                <img
-                  alt="NFT"
-                  src={index.image}
-                  className=" card-img-top imageId"
-                ></img>
-
-                <div className="card-body">
-                  <div className="card-title" id="nftName">
-                    {index.name}
-                  </div>
-                  <div className="card-text" id="nftDescription">
-                    {index.description}
-                  </div>
-                  <div id="nftPrice">{index.price} Ether</div>
-                  <button
-                    className="btn btn-success"
-                    id="nftBuy"
-                    onClick={() => props.buyNFT(index)}
-                  >
-                    Buy NFT
-                  </button>
-                </div>
-              </div> */
                       );
                     })}
                   </Grid>

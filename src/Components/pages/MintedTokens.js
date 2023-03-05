@@ -102,7 +102,7 @@ const MintedTokens = (props) => {
                                 </Typography>
 
                                 <Typography component={"p"} variant={"h3"}>
-                                  {index.price} Ether
+                                  {index.price} Fantom
                                 </Typography>
                               </Box>
                             </Paper>
