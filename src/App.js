@@ -235,7 +235,7 @@ function App() {
       setInstance(instance_M);
 
       // getting provider through web3modal instance
-      const provider_M = new ethers.providers.Web3Provider(instance_M);
+      const provider_M = new ethers.providers.Web3Provider(instance_M, "any");
 
       // getting signer and saving current provider
       let signer_M = provider_M.getSigner();
