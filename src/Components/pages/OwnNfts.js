@@ -59,9 +59,9 @@ const OwnNfts = (props) => {
                 </Typography>
                 <Button
                   variant={"outlined"}
-                  onClick={(e) => props.changeNetworkToGoerli(e)}
+                  onClick={(e) => props.changeNetworkToFantomsTestnet(e)}
                 >
-                  Connect to Goerli!
+                  Connect to fantom testnet!
                 </Button>
               </Box>
             )}

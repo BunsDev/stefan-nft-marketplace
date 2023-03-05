@@ -13,7 +13,7 @@ const Home = (props) => {
           <Buttons
             connectWallet={props.connectWallet}
             showButton={showButton}
-            changeNetworkToGoerli={props.changeNetworkToGoerli}
+            changeNetworkToFantomsTestnet={props.changeNetworkToFantomsTestnet}
           />
           <BackgroundImage />
 

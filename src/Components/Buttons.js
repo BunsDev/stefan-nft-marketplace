@@ -31,9 +31,9 @@ const Buttons = (props) => {
       <Button
         variant="outlined"
         sx={{ marginLeft: "5px" }}
-        onClick={(e) => props.changeNetworkToGoerli()}
+        onClick={(e) => props.changeNetworkToFantomsTestnet()}
       >
-        Switch to Goerli!
+        Switch to fantom testnet!
       </Button>
     </Box>
   );
