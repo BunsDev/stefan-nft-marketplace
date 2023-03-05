@@ -706,6 +706,8 @@ function App() {
   //BUG when using input field and using a nft button on a completely different nft its still submitting the input price
   //changing price from ether(user Input) into wei for contract
   const handleChangePrice = (e) => {
+    previewPrice = e.target.value;
+
     // if value is not blank, then test the regex
     if (previewPrice === "") {
       console.log("invalid price input");
@@ -713,16 +715,15 @@ function App() {
     }
 
     if (!Number(previewPrice)) {
-      window.alert('Only use numbers and/or a dot -> "."');
+      window.alert('Only use numbers ABOVE 1 and/or a dot -> "."');
       return;
     }
     console.log("setting price");
-    previewPrice = e.target.value;
-    // you need to use dots instead of commas when using ether instead of wei
     previewPrice = previewPrice.toString();
     previewPrice = ethers.utils.parseEther(previewPrice);
     setPreviewPriceTwo(previewPrice);
     console.log(previewPriceTwo);
+    // you need to use dots instead of commas when using ether instead of wei
   };
 
   const projectId = process.env.REACT_APP_PORJECT_ID_IPFS; // <---------- your Infura Project ID
@@ -876,7 +877,6 @@ function App() {
     <ThemeProvider theme={theme}>
       <Box>
         <Header account={account} logout={logout} />
-
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -884,7 +884,6 @@ function App() {
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
-
         <Routes>
           <Route
             exact

@@ -1,9 +1,5 @@
 # NFT-Marketplace
 
-## What upgraded from V1 -> V2 ?
-
-There were some fixes to the nftMarketplace as well as NFT contract not keeping correct state about NFTs if maliciously used.
-
 ## Approach
 
 Running currently on Fantoms testnet
@@ -17,7 +13,7 @@ The NFT Marketplace is currently running and fully functional on Fantoms testnet
 
 2. NFT:
 
-The Website is online and running at [Website]()
+The Website is online and running at [Website](https://mellifluous-kheer-df1180.netlify.app/)
 
 ## Local environment set up
 

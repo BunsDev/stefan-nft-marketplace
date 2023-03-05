@@ -22,7 +22,7 @@ export default function SimpleAccordion() {
           <Typography>What are the minting fees?</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>Minting an NFT cost 0.002 ether</Typography>
+          <Typography>Minting an NFT cost 0.002 fantom</Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion>
@@ -43,12 +43,12 @@ export default function SimpleAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Why can't I see my other NFT's?</Typography>
+          <Typography>Why can't I see my other NFTs?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-            This NFT market only shows you the NFT's which you have minted
-            within this market
+            This NFT market only shows you the NFTs which you have minted within
+            this market
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -59,14 +59,14 @@ export default function SimpleAccordion() {
           id="panel4a-header"
         >
           <Typography>
-            Can other Markets like Opensea, see the NFT's minted within this
+            Can other Markets like Opensea, see the NFTs minted within this
             market?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
             Yes, every NFT minted on this market will also be visible on other
-            NFT markets if they decide to do so (Opensea shows all NFT's as
+            NFT markets if they decide to do so (Opensea shows all NFTs as
             default)
           </Typography>
         </AccordionDetails>
@@ -77,7 +77,7 @@ export default function SimpleAccordion() {
           aria-controls="panel3a-content"
           id="panel3a-header"
         >
-          <Typography>Where do the NFT's get stored?</Typography>
+          <Typography>Where do the NFTs get stored?</Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

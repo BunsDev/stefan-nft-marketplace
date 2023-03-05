@@ -26,7 +26,7 @@ const NftHistory = ({
     if (checkIfUserLoggedIn()) {
       //make sure the user is connected to the correct network
       if (checkIfUserConnectedToCorrectNetwork()) {
-        const url = `https://api.covalenthq.com/v1/5/address/${account}/transfers_v2/?contract-address=${ContractAddress[5].NFTV2}&key=${process.env.REACT_APP_COVALENT_API_KEY}`;
+        const url = `https://api.covalenthq.com/v1/4002/address/${account}/transfers_v2/?contract-address=${ContractAddress[5].NFTV2}&key=${process.env.REACT_APP_COVALENT_API_KEY}`;
         let result = await axios.get(url);
         console.log(result);
         setTransferHistory(result);
@@ -51,8 +51,8 @@ const NftHistory = ({
     console.log("show transactionType ran");
     if (index.transfers[0].transfer_type === "IN") {
       console.log(index.to_address);
-      let address = ContractAddress[5].NFTV2;
-      console.log(ContractAddress[5].NFTV2);
+      let address = ContractAddress[4002].NFTV2;
+      console.log(ContractAddress[4002].NFTV2);
       if (index.to_address === address.toLowerCase()) {
         return "Token Minted";
       }
@@ -88,7 +88,7 @@ const NftHistory = ({
     // saves all transaction objects in order "newest -> oldest"
 
     const contractNFTInfura = new ethers.Contract(
-      ContractAddress[5].NFTV2,
+      ContractAddress[4002].NFTV2,
       NFT.abi,
       infuraProvider
     );
