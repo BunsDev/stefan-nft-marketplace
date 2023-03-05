@@ -35,3 +35,7 @@ a:active {
     background-position: 0% 50%;
   }
 }
+
+.img1 {
+  aspect-ratio: 1;
+}
