@@ -131,7 +131,7 @@ const MintForm = (props) => {
                           NFT Description
                         </Typography>
                         <Typography component={"p"} variant={"h3"}>
-                          Price in Ether
+                          Price in Fantom
                         </Typography>
                         <Typography style={{ color: "white" }}>
                           Current Seller: &nbsp;

@@ -28,12 +28,12 @@ const MintedTokens = (props) => {
               align="center"
               color={"secondary"}
             >
-              NFT's you have minted!
+              NFTs you have minted!
             </Typography>
             {!props.instance && !props.network.chainId && (
               <Box sx={{ textAlign: "center" }}>
                 <Typography variant={"h2"} component={"h2"}>
-                  Hey you need to login first before you can see your Minted
+                  Hey, you need to login first before you can see your Minted
                   NFTs!
                 </Typography>
                 <Button
@@ -45,7 +45,7 @@ const MintedTokens = (props) => {
                 </Button>
               </Box>
             )}
-            {props.network.chainId !== 5 && props.instance && (
+            {props.network.chainId !== 4002 && props.instance && (
               <Box sx={{ textAlign: "center" }}>
                 <Typography variant={"h2"} component={"h2"}>
                   Wrong network
@@ -58,7 +58,7 @@ const MintedTokens = (props) => {
                 </Button>
               </Box>
             )}
-            {props.network.chainId === 5 && props.instance && (
+            {props.network.chainId === 4002 && props.instance && (
               <div
                 className="col-md-10 offset-md-1 "
                 style={{ marginTop: "6vh" }}
@@ -83,6 +83,7 @@ const MintedTokens = (props) => {
                             <Paper elevation={24}>
                               <Box padding={1.5}>
                                 <img
+                                  className="img1"
                                   width={"258vw"}
                                   height={"258vh"}
                                   alt="NFT"
@@ -115,7 +116,7 @@ const MintedTokens = (props) => {
             )}
 
             {props.mintedNFTs.length === 0 &&
-              props.network.chainId === 5 &&
+              props.network.chainId === 4002 &&
               props.instance && (
                 <h1 className="text-center " style={{ marginTop: "4vh" }}>
                   You have not minted any NFTs yet!
