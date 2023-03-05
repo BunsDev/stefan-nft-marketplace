@@ -31,17 +31,17 @@ const OwnNfts = (props) => {
               <i className="fas fa-cat"></i>
             </form>
             <Typography
-              Component={"h2"}
+              component={"h2"}
               variant={"h1"}
               align="center"
               color={"secondary"}
             >
-              NFT's that you currently own!
+              NFTs that you currently own!
             </Typography>
             {!props.instance && !props.network.chainId && (
               <Box sx={{ textAlign: "center" }}>
                 <Typography variant={"h2"} component={"h2"}>
-                  Hey you need to login first before you can see your NFTs!
+                  Hey, you need to login first before you can see your NFTs!
                 </Typography>
                 <Button
                   variant="outlined"
@@ -52,7 +52,7 @@ const OwnNfts = (props) => {
                 </Button>
               </Box>
             )}
-            {props.network.chainId !== 5 && props.instance && (
+            {props.network.chainId !== 4002 && props.instance && (
               <Box sx={{ textAlign: "center" }}>
                 <Typography variant={"h2"} component={"h2"}>
                   Wrong network
@@ -65,7 +65,7 @@ const OwnNfts = (props) => {
                 </Button>
               </Box>
             )}
-            {props.network.chainId === 5 && props.instance && (
+            {props.network.chainId === 4002 && props.instance && (
               <Box sx={{ textAlign: "center", marginTop: "6vh" }}>
                 <Button
                   onClick={(e) => props.loadOwnNFTs()}
@@ -86,6 +86,7 @@ const OwnNfts = (props) => {
                               <Paper elevation={24}>
                                 <Box padding={1.5}>
                                   <img
+                                    className="img1"
                                     width={"258vw"}
                                     height={"258vh"}
                                     alt="NFT"
@@ -104,7 +105,7 @@ const OwnNfts = (props) => {
                                   </Typography>
 
                                   <Typography component={"p"} variant={"h3"}>
-                                    {index.price} Ether
+                                    {index.price} Fantom
                                   </Typography>
                                   {/* <Typography style={{ color: "white" }}>
                                 Current Seller: &nbsp;
@@ -145,7 +146,7 @@ const OwnNfts = (props) => {
               ) */
             )}
             {props.ownNFTs.length === 0 &&
-              props.network.chainId === 5 &&
+              props.network.chainId === 4002 &&
               props.instance && (
                 <h1 className="text-center " style={{ marginTop: "4vh" }}>
                   You don't own any NFTs currently!

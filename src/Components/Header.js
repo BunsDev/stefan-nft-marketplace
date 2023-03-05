@@ -374,7 +374,7 @@ export default function PrimarySearchAppBar(props) {
                               </List>
                             </Collapse>
                             {/* </List> */}
-                            <List>
+                            {/*   <List>
                               <ListItemButton onClick={handleClickThree}>
                                 <ListItemIcon>
                                   <InboxIcon />
@@ -401,7 +401,7 @@ export default function PrimarySearchAppBar(props) {
                                   </MenuItem>
                                 </Link>
                               </Collapse>
-                            </List>
+                            </List> */}
                             <List>
                               <ListItemButton onClick={handleClickFour}>
                                 <ListItemIcon>
