@@ -9,11 +9,21 @@ A NFT Marketplace running currently on Fantoms testnet. Let's you mint, sell and
 
 The NFT Marketplace is currently running and fully functional on Fantoms testnet at
 
-1. NFT Market:
+1. NFT Market: https://testnet.ftmscan.com/address/0x567cc2fa269b681636ca842d99861bf3fe203810
 
-2. NFT:
+2. NFT: https://testnet.ftmscan.com/address/0x510173A956c2F66DE0E0C397d8E53D28a12e8866
 
 The Website is online and running at [Website](https://mellifluous-kheer-df1180.netlify.app/)
+
+### Demo videos:
+
+(For the fantom hackathon judges)
+
+NFT Marketplace:
+
+(Not important for the judges but still a good showcase of the token bridge)
+
+SKD Hyphen: https://www.youtube.com/watch?v=cViRhJu1qIM
 
 ## Local environment set up
 
@@ -45,12 +55,6 @@ The Website is online and running at [Website](https://mellifluous-kheer-df1180
 4. Blockchain - [Fantom](https://docs.fantom.foundation/quick-start/short-guide)
 
 ## Biconomy
-
-### Demo videos:
-
-NFT Marketplace:
-
-SKD Hyphen: https://www.youtube.com/watch?v=cViRhJu1qIM
 
 ### Hyphen Widget
 
