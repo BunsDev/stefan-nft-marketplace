@@ -21,10 +21,6 @@ The Website is online and running at [Website](https://mellifluous-kheer-df1180
 
 NFT Marketplace:
 
-(Not important for the judges but still a good showcase of the token bridge)
-
-SKD Hyphen: https://www.youtube.com/watch?v=cViRhJu1qIM
-
 ## Local environment set up
 
 1. git clone

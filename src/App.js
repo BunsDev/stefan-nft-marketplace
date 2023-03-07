@@ -715,7 +715,9 @@ function App() {
     }
 
     if (!Number(previewPrice)) {
-      window.alert('Only use numbers ABOVE 1 and/or a dot -> "."');
+      window.alert(
+        'Only use NUMBERS AND A VALUE ABOVE 1 fantom and/or a dot -> "." => for example: 20.2 is okay'
+      );
       return;
     }
     console.log("setting price");

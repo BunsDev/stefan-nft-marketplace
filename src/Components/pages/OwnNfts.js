@@ -104,9 +104,9 @@ const OwnNfts = (props) => {
                                     {index.description}
                                   </Typography>
 
-                                  <Typography component={"p"} variant={"h3"}>
+                                  {/* <Typography component={"p"} variant={"h3"}>
                                     {index.price} Fantom
-                                  </Typography>
+                                  </Typography> */}
                                   {/* <Typography style={{ color: "white" }}>
                                 Current Seller: &nbsp;
                                 {index.owner.substring(0, 5) +
