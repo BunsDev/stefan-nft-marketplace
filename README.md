@@ -15,11 +15,17 @@ The NFT Marketplace is currently running and fully functional on Fantoms testnet
 
 The Website is online and running at [Website](https://mellifluous-kheer-df1180.netlify.app/)
 
-### Demo videos:
+### Demo videos
 
 (For the fantom hackathon judges)
 
-NFT Marketplace:
+NFT Marketplace: https://www.youtube.com/watch?v=M7j69ca-qzU
+
+## Any questions? Contact me
+
+Email: simpleblock4@protonmail.com
+Discord: SimpleBlock#6604
+
 
 ## Local environment set up
 
