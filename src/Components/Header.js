@@ -356,7 +356,7 @@ export default function PrimarySearchAppBar(props) {
                                   }}
                                 >
                                   <MenuItem onClick={handleClose}>
-                                    Owned Nft list
+                                    Nfts you own
                                   </MenuItem>
                                 </Link>
                                 <Link
