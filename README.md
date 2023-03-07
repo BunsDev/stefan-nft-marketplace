@@ -5,6 +5,15 @@
 Running currently on Fantoms testnet
 A NFT Marketplace running currently on Fantoms testnet. Let's you mint, sell and buy NFT's. During the minting we store the Metadata on IPFS and only store the TokenURI on-chain.
 
+## What is a NFT Marketplace?
+
+This DApp allows you mint, buy and sell NFTs.
+
+- NFT's uploaded to IPFS
+- How does this project make use of IPFS? - The NFT Metadata, including the image itself get uploaded on IPFS, utilizing the decentralized storage IPFS provides.
+- sell, buy with NFT Marketplace contract
+- mint, transfer and set TokenURI with NFT contract
+
 ## Status
 
 The NFT Marketplace is currently running and fully functional on Fantoms testnet at
